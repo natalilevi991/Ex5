@@ -162,7 +162,7 @@ CircularInt & CircularInt::operator=(int num)
 
 CircularInt & CircularInt::operator=(CircularInt & other)
 {
-	thus->mid = other.mid;
+	this->mid = other.mid;
 	if (this->mid > max) {
 		this->mid = this->mid % max;
 	}
