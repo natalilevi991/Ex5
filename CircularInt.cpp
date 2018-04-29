@@ -148,7 +148,7 @@ CircularInt CircularInt::operator-()
 	temp.mid = max - this->mid;
 	return temp;
 }
-CircularInt & CircularInt::operator=(int num)
+CircularInt & CircularInt::operator=(const int num)
 {
 	this->mid = num;
 	if (this->mid > max) {
@@ -157,10 +157,10 @@ CircularInt & CircularInt::operator=(int num)
 	if (this->mid < min) {
 		this->mid = this->mid + max;
 	}
-	return(*this);
+	return *this;
 }
 
-CircularInt & CircularInt::operator=(CircularInt & other)
+CircularInt & CircularInt::operator=(const CircularInt & other)
 {
 	this->mid = other.mid;
 	if (this->mid > max) {
