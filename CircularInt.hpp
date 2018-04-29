@@ -30,6 +30,7 @@ public:
 	CircularInt& operator =(const CircularInt& other);
 	friend CircularInt& operator- (int num, CircularInt other);
 	CircularInt& operator*= (int num);
+	CircularInt& operator*=(const CircularInt& other);
 	friend CircularInt& operator* (CircularInt& other,int num);
 	friend CircularInt& operator* (CircularInt& other, CircularInt& obj);
 	friend CircularInt& operator* (int num,CircularInt& other);
