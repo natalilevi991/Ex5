@@ -162,13 +162,12 @@ CircularInt & CircularInt::operator=(int num)
 
 CircularInt & CircularInt::operator=(CircularInt & other)
 {
-	if (this->max != other.max || this->min != other.min) {
-		throw("the range is different");
+	thus->mid = other.mid;
+	if (this->mid > max) {
+		this->mid = this->mid % max;
 	}
-	else {
-		this->max = other.max;
-		this->min = other.min;
-		this->mid = other.mid;
+	if (this->mid < min) {
+		this->mid = this->mid + max;
 	}
 	return *this;
 }
