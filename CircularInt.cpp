@@ -22,7 +22,7 @@ CircularInt::CircularInt(CircularInt & other)
 	this->mid = other.mid;
 }
 
-CircularInt & CircularInt::operator+=(CircularInt & other)
+CircularInt & CircularInt::operator+=(const CircularInt & other)
 {
 	this->mid = this->mid + other.mid;
 	if (this->mid > this->max) {
@@ -41,7 +41,7 @@ CircularInt & CircularInt::operator+=(int num)
 
 }
 
-CircularInt & CircularInt::operator-=(CircularInt & other)
+CircularInt & CircularInt::operator-=(const CircularInt & other)
 {
 	this->mid = this->mid - other.mid;
 	if (this->mid < this->min) {
@@ -152,7 +152,7 @@ CircularInt & CircularInt::operator*=(int num)
 	return *this;
 }
 
-CircularInt & CircularInt::operator*=(CircularInt & other)
+CircularInt & CircularInt::operator*=(const CircularInt & other)
 {
 	this->mid = (mid*other.mid) % max;
 	return *this;
@@ -164,7 +164,7 @@ CircularInt CircularInt::operator/=(int num)
 	return *this;
 }
 
-CircularInt CircularInt::operator/=(CircularInt & other)
+CircularInt CircularInt::operator/=(const CircularInt & other)
 {
 	this->mid = (this->mid / other.mid)%max;
 	return *this;
