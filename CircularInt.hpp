@@ -13,8 +13,7 @@ public:
 	CircularInt();
 	CircularInt(int a, int b);
 	CircularInt(CircularInt& other);
-	int range(int min, int max, int mid);
-
+	
 	CircularInt& operator+=(CircularInt& other);
 	CircularInt& operator+=(int num);
 
