@@ -14,11 +14,12 @@ public:
 	CircularInt(int a, int b);
 	CircularInt(CircularInt& other);
 	
-	CircularInt& operator+=(CircularInt& other);
-	CircularInt& operator+=(int num);
 
-	CircularInt& operator-=(CircularInt& other);
-	CircularInt& operator-=(int num);
+	CircularInt& operator+=(const CircularInt& other);
+	CircularInt& operator+=(const int num);
+
+	CircularInt& operator-=(const CircularInt& other);
+	CircularInt& operator-=(const int num);
 
 	CircularInt& operator++();
 	CircularInt operator++(int);
@@ -29,16 +30,16 @@ public:
 	CircularInt operator+ (int num);
 	CircularInt operator+ (CircularInt& other);
 
-	CircularInt operator-(CircularInt other);
+	CircularInt operator-(const CircularInt other);
 	CircularInt operator-(int num);
 	CircularInt operator-();
 
-	CircularInt& operator*= (int num);
-	CircularInt& operator*=(CircularInt& other);
+	CircularInt& operator*= (const int num);
+	CircularInt& operator*=(const CircularInt& other);
 
 
-	CircularInt operator /= (int num);
-	CircularInt operator /= (CircularInt& other);
+	CircularInt operator /= (const int num);
+	CircularInt operator /= (const CircularInt& other);
 
 	CircularInt& operator =(int num);
 	CircularInt& operator =(CircularInt& other);
@@ -85,58 +86,4 @@ public:
 
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
