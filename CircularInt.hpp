@@ -13,54 +13,103 @@ public:
 	CircularInt();
 	CircularInt(int a, int b);
 	CircularInt(CircularInt& other);
+	int range(int min, int max, int mid);
+
 	CircularInt& operator+=(CircularInt& other);
 	CircularInt& operator+=(int num);
+
 	CircularInt& operator-=(CircularInt& other);
 	CircularInt& operator-=(int num);
+
 	CircularInt& operator++();
 	CircularInt operator++(int);
+
 	CircularInt& operator--();
 	CircularInt operator--(int);
+
 	CircularInt operator+ (int num);
 	CircularInt operator+ (CircularInt& other);
+
 	CircularInt operator-(CircularInt other);
 	CircularInt operator-(int num);
 	CircularInt operator-();
-	friend CircularInt& operator- (int num, CircularInt other);
+
 	CircularInt& operator*= (int num);
+	CircularInt& operator*=(CircularInt& other);
+
+
+	CircularInt operator /= (int num);
+	CircularInt operator /= (CircularInt& other);
+
+	CircularInt& operator =(int num);
+	CircularInt& operator =(CircularInt& other);
+
+	friend CircularInt operator+(int num, CircularInt& other);
+	friend CircularInt& operator- (int num, CircularInt& other);
+
 	friend CircularInt& operator* (CircularInt& other,int num);
 	friend CircularInt& operator* (CircularInt& other, CircularInt& obj);
 	friend CircularInt& operator* (int num,CircularInt& other);
-	CircularInt operator /= (int num);
-	CircularInt operator /= (CircularInt& other);
+
 	friend CircularInt operator/ (CircularInt& other, int num);
 	friend CircularInt operator/ (CircularInt& other, CircularInt& obj);
 	friend CircularInt operator/ (int num , CircularInt& other);
-	friend CircularInt operator+(int num,CircularInt& other);
+	
+
 	friend bool operator == (CircularInt& other, int num);
 	friend bool operator == (CircularInt& other, CircularInt& obj);
 	friend bool operator == (int num,CircularInt& other);
+
 	friend bool operator != (CircularInt& other, int num);
 	friend bool operator != (CircularInt& other, CircularInt& obj);
 	friend bool operator != (int num, CircularInt& other);
+
 	friend bool operator <= (CircularInt& other, int num);
 	friend bool operator <= (CircularInt& other, CircularInt& obj);
 	friend bool operator <= (int num, CircularInt& other);
+
 	friend bool operator < (CircularInt& other, int num);
 	friend bool operator <(CircularInt& other, CircularInt& obj);
 	friend bool operator < (int num, CircularInt& other);
+
 	friend bool operator >= (CircularInt& other, int num);
 	friend bool operator >= (CircularInt& other, CircularInt& obj);
 	friend bool operator >= (int num, CircularInt& other);
+
 	friend bool operator > (CircularInt& other, int num);
 	friend bool operator >(CircularInt& other, CircularInt& obj);
 	friend bool operator > (int num, CircularInt& other);
+
 	friend ostream& operator<< (ostream& os, const CircularInt& c);
 
 
 
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
