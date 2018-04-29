@@ -406,5 +406,11 @@ ostream& operator<< (ostream& os, const CircularInt& c)
 		os << c.mid;
 		return os;
 }
+istream& operator >> (istream & is, CircularInt& c) {
+	is >> c.mid;
+	return is;
+}
+
+
 
 
