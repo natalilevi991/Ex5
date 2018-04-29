@@ -26,6 +26,8 @@ public:
 	CircularInt operator-(CircularInt other);
 	CircularInt operator-(int num);
 	CircularInt operator-();
+	CircularInt& operator =(int num);
+	CircularInt& operator =(CircularInt& other);
 	friend CircularInt& operator- (int num, CircularInt other);
 	CircularInt& operator*= (int num);
 	friend CircularInt& operator* (CircularInt& other,int num);
