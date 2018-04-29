@@ -59,7 +59,7 @@ public:
 	friend bool operator >(CircularInt& other, CircularInt& obj);
 	friend bool operator > (int num, CircularInt& other);
 	friend ostream& operator<< (ostream& os, const CircularInt& c);
-
+	friend istream& operator >> (istream& os, CircularInt& c);
 
 
 
