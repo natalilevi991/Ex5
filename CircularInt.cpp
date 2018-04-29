@@ -178,7 +178,11 @@ CircularInt & CircularInt::operator*=(int num)
 	this->mid = (mid*num) % max;
 	return temp;
 }
-
+CircularInt & CircularInt::operator*=(const CircularInt & other)
+{
+	this->mid = (mid*other.mid) % max;
+	return *this;
+}
 CircularInt CircularInt::operator/=(int num)
 {
 	this->mid = (this->mid / num)%max;
