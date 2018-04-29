@@ -148,6 +148,30 @@ CircularInt CircularInt::operator-()
 	temp.mid = max - this->mid;
 	return temp;
 }
+CircularInt & CircularInt::operator=(int num)
+{
+	this->mid = num;
+	if (this->mid > max) {
+		this->mid = this->mid % max;
+	}
+	if (this->mid < min) {
+		this->mid = this->mid + max;
+	}
+	return(*this);
+}
+
+CircularInt & CircularInt::operator=(CircularInt & other)
+{
+	if (this->max != other.max || this->min != other.min) {
+		throw("the range is different");
+	}
+	else {
+		this->max = other.max;
+		this->min = other.min;
+		this->mid = other.mid;
+	}
+	return *this;
+}
 
 CircularInt & CircularInt::operator*=(int num)
 {
