@@ -145,7 +145,9 @@ CircularInt CircularInt::operator-(int num)
 CircularInt CircularInt::operator-()
 {
 	CircularInt temp(*this);
-	temp.mid = max - this->mid;
+	if (temp.mid < min) {
+		temp.mid = temp.mid + temp.max;
+	}
 	return temp;
 }
 CircularInt & CircularInt::operator=(const int num)
@@ -185,13 +187,13 @@ CircularInt & CircularInt::operator*=(const CircularInt & other)
 }
 CircularInt CircularInt::operator/=(int num)
 {
-	this->mid = (this->mid / num)%max;
+	this->mid = (this->mid / num) % max;
 	return *this;
 }
 
 CircularInt CircularInt::operator/=(CircularInt & other)
 {
-	this->mid = (this->mid / other.mid)%max;
+	this->mid = (this->mid / other.mid) % max;
 	return *this;
 }
 
@@ -200,7 +202,9 @@ CircularInt & operator-(int num, CircularInt other)
 	CircularInt temp(other);
 	temp.mid = num;
 	temp -= other.mid;
-//	int ans = temp.mid;
+	if (temp.mid < temp.min) {
+		temp.mid = temp.mid + temp.max;
+	}
 	return temp;
 }
 
@@ -208,14 +212,13 @@ CircularInt & operator*(CircularInt & other, int num)
 {
 	return other * num;
 }
-	
+
 
 CircularInt & operator*(CircularInt & other, CircularInt & obj)
 {
 	CircularInt temp(other);
 	temp.mid = (temp.mid * obj.mid) % temp.max;
 	return temp;
-	// TODO: insert return statement here
 }
 
 CircularInt & operator*(int num, CircularInt & other)
@@ -230,6 +233,9 @@ CircularInt operator/(CircularInt & other, int num)
 {
 	CircularInt temp(other);
 	temp.mid = (temp.mid / num) % temp.max;
+	if (temp.mid < temp.min) {
+		temp.mid = temp.mid + temp.max;
+	}
 	return temp;
 }
 
@@ -237,6 +243,9 @@ CircularInt operator/(CircularInt & other, CircularInt & obj)
 {
 	CircularInt temp(other);
 	temp.mid = (temp.mid / obj.mid) % temp.max;
+	if (temp.mid < temp.min) {
+		temp.mid = temp.mid + temp.max;
+	}
 	return temp;
 }
 
@@ -244,10 +253,13 @@ CircularInt operator/(int num, CircularInt & other)
 {
 	CircularInt temp(other);
 	temp.mid = (temp.mid / num) % temp.max;
+	if (temp.mid < temp.min) {
+		temp.mid = temp.mid + temp.max;
+	}
 	return temp;
 }
 
-CircularInt operator+(int num,CircularInt& other)
+CircularInt operator+(int num, CircularInt& other)
 {
 	CircularInt temp(other);
 	temp.mid += num;
@@ -403,14 +415,11 @@ bool operator>(int num, CircularInt & other)
 
 ostream& operator<< (ostream& os, const CircularInt& c)
 {
-		os << c.mid;
-		return os;
+	os << c.mid;
+	return os;
 }
 istream& operator >> (istream & is, CircularInt& c) {
 	is >> c.mid;
 	return is;
 }
-
-
-
 
